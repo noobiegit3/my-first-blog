@@ -5,17 +5,26 @@
     <p>def</p>
     <h2>ghi</h2>
     <p>def</p>
+
     <div>
-    <h1>abc</h1>
-    <p>def</p>
-    <h2>ghi</h2>
-    <p>def</p></div>
-    <div>
+        <h1>abc</h1>
+         <p>def</p>
+         {{ posts }}
+    </div>
+
 
     <em>asd</em><br>
     <strong>strong</strong></div>
     <a href="/">Django Girls Blog</a><br>
-    <a href="https://djangogirls.org">link</a> 
+    <a href="https://djangogirls.org">link</a> <br>
+    
+        {% for post in posts %}
+            <div>
+                <p>published: {{ post.published_date }}</p>
+                <h2><a href="">{{ post.title }}</a></h2>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+        {% endfor %}
 
 </body>
 </html>
